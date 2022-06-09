@@ -1,0 +1,41 @@
+##################### programa que aplica desconto a determinada quantidade comprada
+
+nome= input("Qual seu nome?  ")
+print("*" * 45)
+print(f"Seja bem-vindo {nome},\n Desenvolvido por: Vinicius Falcão RU: 4045314")
+print("*" * 45)
+valor= float(input("Digite o valor do produto:  "))
+qtd= int(input("Digite a quantidade:  "))
+print("=" * 45)
+#---------------------
+desconto1= 0.05
+desconto2= 0.10    #definindo os variaveis com os descontados já divididos por 100
+desconto3= 0.15
+valortotal= valor*qtd
+#---------------------
+
+if 0 <= qtd < 10:
+  print(f"Não possui desconto para está quantidade, então o total é de R${valortotal:.2f}") #anulando desconto abaixo de 10 conforme exigido
+  print("=" * 45)
+
+elif 10 <= qtd < 100:
+  print(f"Seu valor sem desconto foi de R$ {valortotal:.2f}")
+  valorDesc= valortotal*desconto1
+  totaldesc= valortotal-valorDesc      #definindo os padrões para aplicar os descontos 1 por 1 com if e elif
+  print(f"Seu produto com desconto foi de R${totaldesc:.2f} (desconto 5%)")
+  print("=" * 45)
+
+
+elif 100 <= qtd < 1000:
+  print(f"Seu valor sem desconto foi de R$ {valortotal:.2f}")
+  valorDesc= valortotal*desconto2
+  totaldesc= valortotal-valorDesc
+  print(f"Seu produto com desconto foi de R${totaldesc:.2f} (desconto 10%)")
+  print("=" * 45)
+
+else :
+  print(f"Seu valor sem desconto foi de R$ {valortotal:.2f}")
+  valorDesc= valortotal*desconto3
+  totaldesc= valortotal-valorDesc
+  print(f"Seu produto com desconto foi de R${totaldesc:.2f} (desconto 15%)")
+  print("=" * 45)
